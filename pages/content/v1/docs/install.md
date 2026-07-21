@@ -1,0 +1,81 @@
++++
+date = '2026-07-20T16:48:39Z'
+draft = true
+title = 'Getting started'
+weight = 3
++++
+
+This document contains the installation, bootstrapping, build and uninstall steps used during development.
+
+## Prerequisites
+
+- Go 1.24+
+- Android SDK and Android NDK installed (Android Studio recommended)
+- `xtool.sh` (For cross-platform iOS builds)
+- `git`, `curl`
+ 
+ **NB**: For less mess, do not alter the default location for Android SDK.
+
+## Installation
+
+You can use `Go` to install `Sweet Juice` CLI tool, `juice`.
+
+* Using `Go`:
+
+```bash
+go install github.com/sweet-juice/sweetjuice/cmd/juice@latest
+```
+
+## Create a new project
+
+```bash
+juice --new my-new-app
+```
+
+This scaffolds a fresh project from the local `AppTemplate` included in the Sweet Juice module.
+
+### Sweet Juice app structure
+
+- `.plugins/` — Go-side implementations of native plugins
+- `native/android/` — Android Studio project using the generated AAR
+- `native/ios/` — iOS project using the generated XFramework
+- `frontend/dist` — web UI assets
+
+## Run App
+
+Run on a connected device:
+To run on device, ensure Android ADB is configured for Android, or iTunes or libimobiledevice is configured for iOS. 
+
+```bash
+# For Android (via ADB)
+juice --run android
+
+# For iOS (via xtool)
+juice --run ios
+```
+
+## Build release binaries:
+
+```bash
+# Android
+juice --build android debug
+juice --build android release
+juice --build android bundle
+
+# iOS
+juice --build ios debug
+juice --build ios release
+```
+
+## To Uninstall Sweet Juice CLI:
+
+```shell
+rm $(go env GOPATH)/bin/juice     
+```
+
+
+##  Notes & troubleshooting
+
+- Ensure `ANDROID_HOME` or equivalent environment variables are set or Android Studio is installed in default locations.
+- For iOS, ensures `xtool` and Xcode Command Line Tools are installed.
+- If bindings seem stale, run `juice --refresh <platform>` to force a rebuild.

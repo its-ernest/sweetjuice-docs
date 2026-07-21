@@ -1,0 +1,24 @@
++++
+date = '2026-07-20T16:48:39Z'
+draft = true
+title = 'Overview'
+weight = 2
++++
+
+`Version: 1.6` 
+
+**Sweet Juice** is an open-source Go mobile app development framework for building native mobile apps using Go and web technologies, empowering `gomobile`. 
+
+## Features 
+
+ - Fast and optimised compile times. 
+ - Deep Native integrations. 
+ - Supports cross-platform builds for Android apps on **Linux**, **Windows** and **macOS**. 
+ - Supports cross-platform builds for iOS apps on **Linux**, **Windows** and **macOS**. 
+
+
+
+{{<figure alt="Preview1" src="/images/first-app.jpg" width="200" height="400">}}
+{{<figure alt="Preview1" src="/images/first-app.jpg" width="200" height="400">}}
+
+**GET STARTED WITH TUTORIALS WITH THE BUTTON BELOW**
